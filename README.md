@@ -43,7 +43,7 @@ In the `javascript/hangman.js` file, create Hangman class and its methods as des
 
 First let's take a look at the starter code in the `hangman.js` file. We can see that, in this file, we will be developing the `Hangman` class, and all its methods. The `Hangman` class has `constructor` method and it expects an array of words as the single parameter.
 
-Let's start with properties. `Hangman` should have the following properties:
+Let's start with properties. `Hangman` should have the **following properties**:
 
 - **`words`** - an `array` to store all the words that could be given to a player to guess. When the class is instantiated, all the words passed to the constructor as an argument will be saved in this property.
 
@@ -57,7 +57,7 @@ Let's start with properties. `Hangman` should have the following properties:
 
 #### The Hangman methods
 
-Now, let's move to the `Hangman` methods. Keep working in the same file.
+Now, let's move to the `Hangman` **methods**. Keep working in the same file.
 
 - `pickWord()` - a method that returns a random word from the array of `words`.
 
