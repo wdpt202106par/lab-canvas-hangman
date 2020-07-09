@@ -61,7 +61,7 @@ Now, let's move to the `Hangman` **methods**. Keep working in the same file.
 
 - `pickWord()` - a method that returns a random word from the array of `words`.
 
-- `checkIfLetter(keyCode)` - a method that returns _true_ or _false_ depending on the `keyCode` of the key pressed by the user: if the `keyCode` corresponds to a character from `a-z`, it should return _true_, otherwise, it should return _false_. You can use [keycode.info](https://keycode.info/) to find out which codes refer to each key.
+- `checkIfLetter(keyCode)` - a method that returns _true_ or _false_ depending on the `key` of the key pressed by the user: if the `key` corresponds to a character from `a-z`, it should return _true_, otherwise, it should return _false_. You can use [keycode.info](https://keycode.info/) to find out which codes refer to each key.
 
 - `checkClickedLetters(letter)` - a method that should check if the letter passed as an argument has already been pressed. It should return _true_ if it was not or _false_ in the opposite case.
 
