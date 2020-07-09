@@ -53,7 +53,7 @@ Let's start with properties. `Hangman` should have the **following properties**:
 
 - **`guessedLetters`** - a `string` to store the _letters_ user chose and guessed. We will use this to know when the user has won.
 
-- **`errorsLeft`** - the initial/start value should be 10, and it should decrease every time a user picks a letter that doesn't appear in the word they need to guess.
+- **`errorsLeft`** - the initial/start value should be 8, and it should decrease every time a user picks a letter that doesn't appear in the word they need to guess.
 
 #### The Hangman methods
 
