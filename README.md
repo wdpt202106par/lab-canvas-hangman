@@ -103,7 +103,7 @@ hangmanCanvas = new HangmanCanvas(hangman.secretWord);
 
 - **`drawLines()`** - the method that should draw one line for each letter of the secret word. At this point we know the secret word the user has to guess.
 
-- **`writeCorrectLetter(index)`** and **`writeWrongLetter(letter, errorsLeft)`** - the methods that should write the letter on which the user has just clicked, on the appropriate part of the canvas. After checking if the letter was not already clicked, we should write it on our board. If the secret word includes the letter, we should write it in the position where it belongs, and if the letter is not included in the secret word, we should write it on the top right corner, so that the user knows which letters were already clicked.
+- **`writeCorrectLetter(letter)`** and **`writeWrongLetter(letter, errorsLeft)`** - the methods that should write the letter on which the user has just clicked, on the appropriate part of the canvas. After checking if the letter was not already clicked, we should write it on our board. If the secret word includes the letter, we should write it in the position where it belongs, and if the letter is not included in the secret word, we should write it on the top right corner, so that the user knows which letters were already clicked.
 
 - **`drawHangman(errorsLeft)`** - the method that should draw the **`hangman`**. You will see that the drawing is composed of multiple lines and one circle. Go ahead and experiment, you will see it is pretty straightforward. :wink:
 
