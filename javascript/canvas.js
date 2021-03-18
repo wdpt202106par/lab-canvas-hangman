@@ -12,7 +12,7 @@ class HangmanCanvas {
     // ... your code goes here
   }
 
-  writeCorrectLetter(index) {
+  writeCorrectLetter(letter) {
     // ... your code goes here
   }
 
