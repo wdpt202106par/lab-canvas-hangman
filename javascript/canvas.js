@@ -1,3 +1,4 @@
+let wrongLetters='';
 class HangmanCanvas {
   constructor(secretWord) {
     this.context = document.getElementById('hangman').getContext('2d');
@@ -7,7 +8,7 @@ class HangmanCanvas {
 
   createBoard() {
     // ... your code goes here
-    this.context.clearRect(0,0,800,1200);
+    this.context.clearRect(0,0,1200,800);
     this.drawLines()
   }
 
@@ -48,27 +49,22 @@ class HangmanCanvas {
 
   writeWrongLetter(letter, errorsLeft) {
     // ... your code goes here
-    hangman.addWrongLetter(letter);
-    let x = 1200;
-    let y = 500;
+    errorsLeft=hangman.errorsLeft;
+    let x = 800;
+    let y = 300;
+    // if letter is a letter and not repeated and not belong to secretword => write on the board 
     
-    for (let i=0; i<hangman.guessedLetters.length;i++){
-      let wrongLetters=[];
-      letter = hangman.guessedLetters[i]
-    // if (hangman.checkClickedLetters(letter) && this.secretWord[i]!==letter){
-      if (this.secretWord.includes(hangman.guessedLetters[i])===false){
-        wrongLetters.push(hangman.guessedLetters[i])
-        for (let i=0;i< wrongLetters.length;i++){
-          x+=30;
+    for (let i = 0; i< hangman.guessedLetters.length;i++){
+      if (hangman.checkClickedLetters(letter) && this.secretWord.includes(letter)===false){
+        wrongLetters+=' '+letter;
+        console.log(wrongLetters);
           this.context.font='40px serif';
-          this.context.fillText(wrongLetters[i],x,y);
-        }
+          this.context.fillText(wrongLetters,x,y);
       }
-      // 
-      // this.context.font='40px serif';
-      // this.context.fillText(letter,x,y);
-      
     }
+      // this.context.font='40px serif';&& 
+      // this.context.fillText(letter,x,y);
+      hangman.addWrongLetter(letter);
   }
 
   drawHangman(errorsLeft) {
@@ -135,13 +131,21 @@ class HangmanCanvas {
 
   gameOver() {
     // ... your code goes here
-    hangman.checkGameOver();
-    return 'you lost'
+    if (hangman.checkGameOver()){
+      const gameOver=document.createElement('img')
+      gameOver.src="images/gameover.png"
+      const ratio = gameOver.naturalWidth/gameOver.naturalHeight
+      this.context.drawImage(gameOver,450,300,300,300/ratio)
+    }
   }
 
   winner() {
     // ... your code goes here
-    hangman.checkWinner();
-    return 'you won'
+    if(hangman.checkWinner()){
+      const awesome=document.createElement('img')
+      awesome.src="images/awesome.png";
+      const ratio = awesome.naturalWidth/awesome.naturalHeight;
+      this.context.drawImage(awesome,450,300,300,300/ratio)
+    }
   }
 }

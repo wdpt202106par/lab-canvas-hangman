@@ -99,9 +99,13 @@ if (startGameButton) {
 document.addEventListener('keydown', event => {
   // React to user pressing a key
   // ... your code goes here
-  hangmanCanvas.writeCorrectLetter(event.key)
-  hangmanCanvas.writeWrongLetter(event.key, hangman.errorsLeft)
-  hangmanCanvas.drawHangman(hangman.errorsLeft);
-  hangmanCanvas.gameOver();
-  hangmanCanvas.winner();
+  
+  if (hangman.checkIfLetter(event.key)){
+    hangmanCanvas.writeCorrectLetter(event.key)
+    hangmanCanvas.writeWrongLetter(event.key, hangman.errorsLeft);
+    hangmanCanvas.drawHangman(hangman.errorsLeft);
+    hangmanCanvas.gameOver();
+    hangmanCanvas.winner();
+  }
+  
 });
